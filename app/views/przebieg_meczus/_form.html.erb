@@ -1,0 +1,41 @@
+<%= form_for(@przebieg_meczu) do |f| %>
+  <% if @przebieg_meczu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@przebieg_meczu.errors.count, "error") %> prohibited this przebieg_meczu from being saved:</h2>
+
+      <ul>
+      <% @przebieg_meczu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_meczu %><br>
+    <%= f.date_select :data_meczu %>
+  </div>
+  <div class="field">
+    <%= f.label :miejsce_meczu %><br>
+    <%= f.text_field :miejsce_meczu %>
+  </div>
+  <div class="field">
+    <%= f.label :druzyna %><br>
+    <%= f.text_field :druzyna %>
+  </div>
+  <div class="field">
+    <%= f.label :w_ktorej_minucie_gol %><br>
+    <%= f.number_field :w_ktorej_minucie_gol %>
+  </div>
+  <div class="field">
+    <%= f.label :wynik_meczu %><br>
+    <%= f.number_field :wynik_meczu %>
+  </div>
+  <div class="field">
+    <%= f.label :rankingMeczy_id %><br>
+    <%= f.text_field :rankingMeczy_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

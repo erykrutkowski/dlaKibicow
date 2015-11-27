@@ -1,0 +1,43 @@
+<%= form_for(@wydarzeny) do |f| %>
+  <% if @wydarzeny.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wydarzeny.errors.count, "error") %> prohibited this wydarzeny from being saved:</h2>
+
+      <ul>
+      <% @wydarzeny.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_meczu %><br>
+    <%= f.date_select :data_meczu %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :w_ktorej_minucie_gol %><br>
+    <%= f.number_field :w_ktorej_minucie_gol %>
+  </div>
+  <div class="field">
+    <%= f.label :czerwona_kartka %><br>
+    <%= f.text_field :czerwona_kartka %>
+  </div>
+  <div class="field">
+    <%= f.label :zolta_kartka_string %><br>
+    <%= f.text_field :zolta_kartka_string %>
+  </div>
+  <div class="field">
+    <%= f.label :pilkarz_id %><br>
+    <%= f.select :pilkarz_id, @pilkarzs %>
+  </div>
+  <div class="field">
+  	<%= f.label :mecz_id%><br>
+    <%= f.select :mecz_id, @meczs %>
+  </div>	
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

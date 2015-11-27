@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gospodarz:</strong>
+  <%= @mecz.gospodarz.nazwa %>
+</p>
+
+<p>
+  <strong>Gosc:</strong>
+  <%= @mecz.gosc.nazwa %>
+</p>
+
+<p>
+  <strong>Punkty gospodarzy:</strong>
+  <%= @mecz.punkty_gospodarzy %>
+</p>
+
+<p>
+  <strong>Punkty gosci:</strong>
+  <%= @mecz.punkty_gosci %>
+</p>
+
+
+
+<%= link_to 'Edytuj', edit_mecz_path(@mecz) %> |
+<%= link_to 'Powrót', meczs_path %>

@@ -1,0 +1,46 @@
+<body bgcolor="#447444">
+<img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/10173782_10202329996595479_7434174438407791416_n.jpg" width="1010" height="173" />
+<br />
+<br />
+<a href="pilkarzs"><img src="https://scontent-b-ams.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10374006_545922465519191_3533727877224152397_n.jpg" width="150" height="50" /></a>
+<a href="druzynas"><img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10339578_10202328013945914_2812962806310649699_n.jpg" width="150" height="50" /></a>
+<a href="przebieg_meczus"><img src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10269381_10202328014105918_6875682005467662637_n.jpg" width="150" height="50" /></a>
+<a href="ranking_meczies"><img src="https://scontent-a-fra.xx.fbcdn.net/hphotos-xfp1/t1.0-9/10407182_10202328014505928_7598201916948454092_n.jpg" width="150" height="50" /></a>
+<br />
+<br />
+<br />
+<table align= "center" border = "3">
+  <thead>
+    <tr>
+      <th bgcolor="ADC666">Data meczu</th>
+      <th bgcolor="ADC666">W ktorej minucie gol</th>
+      <th bgcolor="ADC666">Czerwona kartka</th>
+      <th bgcolor="ADC666">Żółta kartka</th>
+      <th bgcolor="ADC666">Nazwisko zawodnika</th>
+      <th bgcolor="ADC666">Nazwa druzyny gospodarzy</th>
+      <th bgcolor="ADC666">Edycja</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wydarzenies.each do |wydarzeny| %>
+      <tr bgcolor="white">
+        <td><%= wydarzeny.data_meczu %></td>
+        <td><%= wydarzeny.zawodnik_nazwisko %></td>
+        <td><%= wydarzeny.w_ktorej_minucie_gol %></td>
+        <td><%= wydarzeny.czerwona_kartka %></td>
+        <td><%= wydarzeny.zolta_kartka_string %></td>
+        <td><%= wydarzeny.pilkarz %></td>
+        <td><%= wydarzeny.mecz.gospodarz %></td>
+        <td><%= link_to 'Pokaż', wydarzeny %>
+        <%= link_to 'Edytuj', edit_wydarzeny_path(wydarzeny) %>
+        <%= link_to 'Usuń', wydarzeny, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wydarzenie', new_wydarzeny_path %>

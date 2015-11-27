@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nazwa:</strong>
+  <%= @druzyna.nazwa %>
+</p>
+
+<p>
+  <strong>Miasto pochodzenia:</strong>
+  <%= @druzyna.miasto_pochodzenia %>
+</p>
+
+<p>
+  <strong>Nazwisko trenera:</strong>
+  <%= @druzyna.nazwisko_trenera %>
+</p>
+
+<%= link_to 'Edytuj', edit_druzyna_path(@druzyna) %> |
+<%= link_to 'Powrót', druzynas_path %>
+<%= link_to 'Dodaj piłkarza', new_pilkarz_path %> 

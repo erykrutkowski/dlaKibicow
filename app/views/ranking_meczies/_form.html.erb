@@ -1,0 +1,21 @@
+<%= form_for(@ranking_meczy) do |f| %>
+  <% if @ranking_meczy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ranking_meczy.errors.count, "error") %> prohibited this ranking_meczy from being saved:</h2>
+
+      <ul>
+      <% @ranking_meczy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dataMeczu %><br>
+    <%= f.date_select :dataMeczu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

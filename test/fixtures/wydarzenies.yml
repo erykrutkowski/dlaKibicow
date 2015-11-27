@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_meczu: 2014-06-09
+  zawodnik_nazwisko: MyString
+  w_ktorej_minucie_gol: 1
+  czerwona_kartka: MyString
+  zolta_kartka_string: MyString
+  pilkarz_id: 
+  mecz_id: 
+
+two:
+  data_meczu: 2014-06-09
+  zawodnik_nazwisko: MyString
+  w_ktorej_minucie_gol: 1
+  czerwona_kartka: MyString
+  zolta_kartka_string: MyString
+  pilkarz_id: 
+  mecz_id: 

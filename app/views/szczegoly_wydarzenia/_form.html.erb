@@ -1,0 +1,43 @@
+<%= form_for(@szczegoly_wydarzenium) do |f| %>
+  <% if @szczegoly_wydarzenium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@szczegoly_wydarzenium.errors.count, "error") %> prohibited this szczegoly_wydarzenium from being saved:</h2>
+
+      <ul>
+      <% @szczegoly_wydarzenium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_wydarzenia %><br>
+    <%= f.date_select :data_wydarzenia %>
+  </div>
+  <div class="field">
+    <%= f.label :ile_goli %><br>
+    <%= f.number_field :ile_goli %>
+  </div>
+  <div class="field">
+    <%= f.label :czerwone_kartki %><br>
+    <%= f.number_field :czerwone_kartki %>
+  </div>
+  <div class="field">
+    <%= f.label :zolte_kartki %><br>
+    <%= f.number_field :zolte_kartki %>
+  </div>
+  <div class="field">
+    <%= f.label :pilkarz_id %><br>
+    <%= f.select :pilkarz_id, @pilkarzs %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :mecz_id %><br>
+    <%= f.select :mecz_id, @meczs %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

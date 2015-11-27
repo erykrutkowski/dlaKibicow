@@ -1,0 +1,48 @@
+<body background="/assets/tlo.jpg">
+<center>
+<img src="/assets/logo.jpg"/>
+<br />
+<br />
+<a href="pilkarzs"><img src="/assets/pilkarze.jpg" width="150" height="50" /></a>
+<a href="druzynas"><img src="/assets/druzyny.jpg" width="150" height="50" /></a>
+<a href="przebieg_meczus"><img src="/assets/przebieg.jpg" width="150" height="50" /></a>
+<a href="szczegoly_wydarzenia"><img src="/assets/szczegoly.jpg" width="150" height="50" /></a>
+<br />
+<br />
+<br />
+</center>
+<table align="center" border = "3" >
+  <thead>
+    <tr>
+      <th bgcolor="ADC666">Data meczu</th>
+      <th bgcolor="ADC666">Miejsce meczu</th>
+      <th bgcolor="ADC666">Druzyna</th>
+      <th bgcolor="ADC666">W ktorej minucie gol</th>
+      <th bgcolor="ADC666">Wynik meczu</th>
+      <th bgcolor="ADC666">Rankingmeczy</th>
+      <th bgcolor="ADC666">Edytuj</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @przebieg_meczus.each do |przebieg_meczu| %>
+      <tr bgcolor="white">
+        <td><%= przebieg_meczu.data_meczu %></td>
+        <td><%= przebieg_meczu.miejsce_meczu %></td>
+        <td><%= przebieg_meczu.druzyna %></td>
+        <td><%= przebieg_meczu.w_ktorej_minucie_gol %></td>
+        <td><%= przebieg_meczu.wynik_meczu %></td>
+        <td><%= przebieg_meczu.rankingMeczy %></td>
+        <td><%= link_to 'Pokaż', przebieg_meczu %>
+        <%= link_to 'Edytuj', edit_przebieg_meczu_path(przebieg_meczu) %>
+        <%= link_to 'Usuń', przebieg_meczu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowy przebieg meczu', new_przebieg_meczu_path %>
+</body>

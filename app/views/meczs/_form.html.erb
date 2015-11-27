@@ -1,0 +1,34 @@
+<%= form_for(@mecz) do |f| %>
+  <% if @mecz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mecz.errors.count, "error") %> prohibited this mecz from being saved:</h2>
+
+      <ul>
+      <% @mecz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gospodarz_id %><br>
+    <%= f.select :gospodarz_id, @druzynas %>
+  </div>
+  <div class="field">
+    <%= f.label :gosc_id %><br>
+    <%= f.select :gosc_id, @druzynas %>
+  </div>
+  <div class="field">
+    <%= f.label :punkty_gospodarzy %><br>
+    <%= f.number_field :punkty_gospodarzy %>
+  </div>
+  <div class="field">
+    <%= f.label :punkty_gosci %><br>
+    <%= f.number_field :punkty_gosci %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

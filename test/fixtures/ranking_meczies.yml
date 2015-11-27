@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dataMeczu: 2014-05-27
+
+two:
+  dataMeczu: 2014-05-27

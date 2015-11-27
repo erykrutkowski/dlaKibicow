@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data wydarzenia:</strong>
+  <%= @szczegoly_wydarzenium.data_wydarzenia %>
+</p>
+
+<p>
+  <strong>Ile goli:</strong>
+  <%= @szczegoly_wydarzenium.ile_goli %>
+</p>
+
+<p>
+  <strong>Czerwone kartki:</strong>
+  <%= @szczegoly_wydarzenium.czerwone_kartki %>
+</p>
+
+<p>
+  <strong>Zolte kartki:</strong>
+  <%= @szczegoly_wydarzenium.zolte_kartki %>
+</p>
+
+<p>
+  <strong>Pilkarz:</strong>
+  <%= @szczegoly_wydarzenium.pilkarz.imie %>
+  <%= @szczegoly_wydarzenium.pilkarz.nazwisko %>
+</p>
+<strong>Drużyna:</strong>
+  <%= @szczegoly_wydarzenium.pilkarz.druzyna.nazwa %>
+</p>
+
+<%= link_to 'Edytuj', edit_szczegoly_wydarzenium_path(@szczegoly_wydarzenium) %> |
+<%= link_to 'Powrót', szczegoly_wydarzenia_path %>

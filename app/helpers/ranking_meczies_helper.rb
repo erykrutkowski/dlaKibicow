@@ -1,0 +1,2 @@
+module RankingMecziesHelper
+end

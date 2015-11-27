@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nazwa: MyString
+  miasto_pochodzenia: MyString
+  nazwisko_trenera: MyString
+
+two:
+  nazwa: MyString
+  miasto_pochodzenia: MyString
+  nazwisko_trenera: MyString

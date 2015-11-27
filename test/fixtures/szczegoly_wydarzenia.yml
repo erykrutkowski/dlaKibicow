@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_wydarzenia: 2014-06-09
+  ile_goli: 1
+  czerwone_kartki: 1
+  zolte_kartki: 1
+  pilkarz_id: 
+  mecz_id: 
+
+two:
+  data_wydarzenia: 2014-06-09
+  ile_goli: 1
+  czerwone_kartki: 1
+  zolte_kartki: 1
+  pilkarz_id: 
+  mecz_id: 

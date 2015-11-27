@@ -1,0 +1,2 @@
+module SzczegolyWydarzeniaHelper
+end

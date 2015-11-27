@@ -1,0 +1,46 @@
+<body background="/assets/tlo.jpg">
+<center>
+<img src="/assets/logo.jpg"/>
+<br />
+<br />
+<a href="pilkarzs"><img src="/assets/pilkarze.jpg" width="150" height="50" /></a>
+<a href="druzynas"><img src="/assets/druzyny.jpg" width="150" height="50" /></a>
+<a href="meczs"><img src="/assets/ranking.jpg" width="150" height="50" /></a>
+<a href="szczegoly_wydarzenia"><img src="/assets/szczegoly.jpg" width="150" height="50" /></a>
+<br />
+<br />
+<br />
+</center>
+<table align="center" border = "3" >
+  <thead>
+    <tr>
+      <th bgcolor="ADC666">
+		<Strong>Witamy w naszej aplikacji dla fanów piłki nożnej oraz organizatorów zawodów!</Strong>
+		<br />
+		<b>Umożliwia ona dodawanie i edytowanie składów drużyn,</b>
+		<br />
+		<b>oraz śledzenie rankingów i przebiegu meczy</b>
+		<br />
+		<Strong>SERDECZNIE ZAPRASZAMY!</Strong>
+	  </th>
+	</tr>
+  </thead>
+</table>
+<br/>
+
+<table align="center" border = "3" >
+  <thead>
+    <tr>
+      <th bgcolor="ADC666">
+		<%= select_year(Time.now) %>
+		<%= select_month(Time.now) %>
+		<%= select_day(Time.now) %>
+		<br />
+		<%= link_to 'Dodaj mecz', new_mecz_path %>
+		<%= link_to 'Dodaj szczegóły wydarzenia', new_szczegoly_wydarzenium_path %>
+	  </th>
+	</tr>
+  </thead>
+</table>
+</body>
+

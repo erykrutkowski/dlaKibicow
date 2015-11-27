@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gospodarz: MyString
+  gosc: MyString
+  punkty_gospodarzy: 1
+  punkty_gosci: 1
+  druzyna_id: 
+
+two:
+  gospodarz: MyString
+  gosc: MyString
+  punkty_gospodarzy: 1
+  punkty_gosci: 1
+  druzyna_id: 

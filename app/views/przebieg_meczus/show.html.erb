@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data meczu:</strong>
+  <%= @przebieg_meczu.data_meczu %>
+</p>
+
+<p>
+  <strong>Miejsce meczu:</strong>
+  <%= @przebieg_meczu.miejsce_meczu %>
+</p>
+
+<p>
+  <strong>Druzyna:</strong>
+  <%= @przebieg_meczu.druzyna %>
+</p>
+
+<p>
+  <strong>W ktorej minucie gol:</strong>
+  <%= @przebieg_meczu.w_ktorej_minucie_gol %>
+</p>
+
+<p>
+  <strong>Wynik meczu:</strong>
+  <%= @przebieg_meczu.wynik_meczu %>
+</p>
+
+<p>
+  <strong>Rankingmeczy:</strong>
+  <%= @przebieg_meczu.rankingMeczy %>
+</p>
+
+<%= link_to 'Edytuj', edit_przebieg_meczu_path(@przebieg_meczu) %> |
+<%= link_to 'Powrót', przebieg_meczus_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imie:</strong>
+  <%= @pilkarz.imie %>
+</p>
+
+<p>
+  <strong>Nazwisko:</strong>
+  <%= @pilkarz.nazwisko %>
+</p>
+
+<p>
+  <strong>Ilegoli:</strong>
+  <%= @pilkarz.ileGoli %>
+</p>
+
+<p>
+  <strong>Ile zoltych kartek:</strong>
+  <%= @pilkarz.ile_zoltych_kartek %>
+</p>
+
+<p>
+  <strong>Ile czerwonych:</strong>
+  <%= @pilkarz.ile_czerwonych %>
+</p>
+
+<p>
+  <strong>Druzyna:</strong>
+  <%= @pilkarz.druzyna.nazwa%>
+</p>
+
+<%= link_to 'Edytuj', edit_pilkarz_path(@pilkarz) %> |
+<%= link_to 'Powrót', pilkarzs_path %>

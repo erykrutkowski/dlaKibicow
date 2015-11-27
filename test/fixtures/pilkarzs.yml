@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imie: MyString
+  nazwisko: MyString
+  ileGoli: 1
+  ile_zoltych_kartek: 1
+  ile_czerwonych: 1
+  druzyna_id: 
+
+two:
+  imie: MyString
+  nazwisko: MyString
+  ileGoli: 1
+  ile_zoltych_kartek: 1
+  ile_czerwonych: 1
+  druzyna_id: 

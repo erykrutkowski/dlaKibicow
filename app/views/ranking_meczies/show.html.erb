@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datameczu:</strong>
+  <%= @ranking_meczy.dataMeczu %>
+</p>
+
+<%= link_to 'Edytuj', edit_ranking_meczy_path(@ranking_meczy) %> |
+<%= link_to 'Powrót', ranking_meczies_path %>

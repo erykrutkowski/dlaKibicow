@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_meczu: 2014-05-27
+  miejsce_meczu: MyString
+  druzyna: MyString
+  w_ktorej_minucie_gol: 1
+  wynik_meczu: 1
+  rankingMeczy_id: 
+
+two:
+  data_meczu: 2014-05-27
+  miejsce_meczu: MyString
+  druzyna: MyString
+  w_ktorej_minucie_gol: 1
+  wynik_meczu: 1
+  rankingMeczy_id: 

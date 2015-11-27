@@ -1,0 +1,49 @@
+<body background="/assets/tlo.jpg">
+<center>
+<img src="/assets/logo.jpg"/>
+<br />
+<br />
+<a href="pilkarzs"><img src="/assets/pilkarze.jpg" width="150" height="50" /></a>
+<a href="druzynas"><img src="/assets/druzyny.jpg" width="150" height="50" /></a>
+<a href="meczs"><img src="/assets/ranking.jpg" width="150" height="50" /></a>
+<a href="szczegoly_wydarzenia"><img src="/assets/szczegoly.jpg" width="150" height="50" /></a>
+<br />
+<br />
+<br />
+</center>
+<table align= "center" border = "3">
+
+  <thead>
+    <tr>
+      <th bgcolor="ADC666">Data wydarzenia</th>
+      <th bgcolor="ADC666">Ile goli</th>
+      <th bgcolor="ADC666">Czerwone kartki</th>
+      <th bgcolor="ADC666">Żółte kartki</th>
+      <th bgcolor="ADC666">Nazwisko i imię zawodnika</th>
+      <th bgcolor="ADC666">Drużyna zawodnika</th>
+      <th bgcolor="ADC666">Edycja</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @szczegoly_wydarzenia.each do |szczegoly_wydarzenium| %>
+      <tr bgcolor="white">
+        <td align="center"><%= szczegoly_wydarzenium.data_wydarzenia %></td>
+        <td align="center"><%= szczegoly_wydarzenium.ile_goli %></td>
+        <td align="center"><%= szczegoly_wydarzenium.czerwone_kartki %></td>
+        <td align="center"><%= szczegoly_wydarzenium.zolte_kartki %></td>
+        <td align="center"><%= szczegoly_wydarzenium.pilkarz.nazwisko %>&#160;</&#160;><%= szczegoly_wydarzenium.pilkarz.imie %></td>
+        <td align="center"><%= szczegoly_wydarzenium.pilkarz.druzyna.nazwa %></td>
+        <td><%= link_to 'Pokaż', szczegoly_wydarzenium %>
+       	<%= link_to 'Edytuj', edit_szczegoly_wydarzenium_path(szczegoly_wydarzenium) %>
+        <%= link_to 'Usuń', szczegoly_wydarzenium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<font color="red"><%= link_to 'Nowe szczegóły wydarzenia', new_szczegoly_wydarzenium_path %></font>

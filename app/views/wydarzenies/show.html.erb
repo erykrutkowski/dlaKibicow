@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data meczu:</strong>
+  <%= @wydarzeny.data_meczu %>
+</p>
+
+
+<p>
+  <strong>W ktorej minucie gol:</strong>
+  <%= @wydarzeny.w_ktorej_minucie_gol %>
+</p>
+
+<p>
+  <strong>Czerwona kartka:</strong>
+  <%= @wydarzeny.czerwona_kartka %>
+</p>
+
+<p>
+  <strong>Zolta kartka string:</strong>
+  <%= @wydarzeny.zolta_kartka%>
+</p>
+
+<p>
+  <strong>Nazwisko piłkarza:</strong>
+  <%= @wydarzeny.pilkarz.nazwisko %>
+</p>
+
+
+<p>
+  <strong>Gospodarze meczu:</strong>
+  <%= @wydarzeny.mecz.gospodarz %>
+</p>
+
+<%= link_to 'Edytuj', edit_wydarzeny_path(@wydarzeny) %> |
+<%= link_to 'Powrót', wydarzenies_path %>
