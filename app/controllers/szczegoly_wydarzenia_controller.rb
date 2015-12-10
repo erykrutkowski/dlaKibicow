@@ -29,13 +29,29 @@ class SzczegolyWydarzeniaController < ApplicationController
   def create
     
     @szczegoly_wydarzenium = SzczegolyWydarzenium.new(szczegoly_wydarzenium_params)
+    pilkarz = Pilkarz.find(params[:szczegoly_wydarzenium][:pilkarz_id])
+    mecz = Mecz.find(params[:szczegoly_wydarzenium][:mecz_id])
+    pilkarz.ile_zoltych_kartek += params[:szczegoly_wydarzenium][:zolte_kartki].to_f
+    pilkarz.ile_czerwonych += params[:szczegoly_wydarzenium][:czerwone_kartki].to_f
     
     if params[:szczegoly_wydarzenium][:ile_goli] >= "0"
-          mecz = Mecz.find(params[:szczegoly_wydarzenium][:mecz_id])
-          mecz.punkty_gospodarzy += params[:szczegoly_wydarzenium][:ile_goli].to_f
-          mecz.save!
+          if mecz.gospodarz_id == pilkarz.druzyna_id
+             mecz.punkty_gospodarzy += params[:szczegoly_wydarzenium][:ile_goli].to_f
+          else
+             mecz.punkty_gosci += params[:szczegoly_wydarzenium][:ile_goli].to_f
+          end
+          pilkarz.ileGoli += params[:szczegoly_wydarzenium][:ile_goli].to_f
+    else
+          if mecz.gosc_id == pilkarz.druzyna_id
+             mecz.punkty_gospodarzy -= params[:szczegoly_wydarzenium][:ile_goli].to_f
+          else
+             mecz.punkty_gosci -= params[:szczegoly_wydarzenium][:ile_goli].to_f
+          end
+          pilkarz.ileGoli -= params[:szczegoly_wydarzenium][:ile_goli].to_f
     end
     
+    pilkarz.save!
+    mecz.save!
     respond_to do |format|
       if @szczegoly_wydarzenium.save
         format.html { redirect_to @szczegoly_wydarzenium, notice: 'Szczegoly wydarzenium was successfully created.' }
