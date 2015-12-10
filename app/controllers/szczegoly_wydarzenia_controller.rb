@@ -27,8 +27,15 @@ class SzczegolyWydarzeniaController < ApplicationController
   # POST /szczegoly_wydarzenia
   # POST /szczegoly_wydarzenia.json
   def create
+    
     @szczegoly_wydarzenium = SzczegolyWydarzenium.new(szczegoly_wydarzenium_params)
-
+    
+    if params[:szczegoly_wydarzenium][:ile_goli] >= "0"
+          mecz = Mecz.find(params[:szczegoly_wydarzenium][:mecz_id])
+          mecz.punkty_gospodarzy += params[:szczegoly_wydarzenium][:ile_goli].to_f
+          mecz.save!
+    end
+    
     respond_to do |format|
       if @szczegoly_wydarzenium.save
         format.html { redirect_to @szczegoly_wydarzenium, notice: 'Szczegoly wydarzenium was successfully created.' }
@@ -80,6 +87,7 @@ class SzczegolyWydarzeniaController < ApplicationController
         [ pilkarz.imie + " " + pilkarz.nazwisko, pilkarz.id]
       end
     end
+    
      def set_meczs
       @meczs = Mecz.all.map do |mecz|
         [ mecz.gospodarz.nazwa + "[" + mecz.punkty_gospodarzy.to_s + "] - [" + mecz.punkty_gosci.to_s + "]" + mecz.gosc.nazwa, mecz.id ]
