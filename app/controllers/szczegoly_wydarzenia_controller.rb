@@ -22,6 +22,7 @@ class SzczegolyWydarzeniaController < ApplicationController
 
   # GET /szczegoly_wydarzenia/1/edit
   def edit
+    
   end
 
   # POST /szczegoly_wydarzenia
@@ -66,6 +67,23 @@ class SzczegolyWydarzeniaController < ApplicationController
   # PATCH/PUT /szczegoly_wydarzenia/1
   # PATCH/PUT /szczegoly_wydarzenia/1.json
   def update
+      pilkarz = Pilkarz.find(@szczegoly_wydarzenium.pilkarz_id)
+      pilkarz.ile_zoltych_kartek -= @szczegoly_wydarzenium.zolte_kartki
+      pilkarz.ile_czerwonych -= @szczegoly_wydarzenium.czerwone_kartki
+      pilkarz.ileGoli -= @szczegoly_wydarzenium.ile_goli
+      pilkarz.save!
+      
+      pilkarz2 = Pilkarz.find(params[:szczegoly_wydarzenium][:pilkarz_id])
+      pilkarz2.ile_zoltych_kartek += params[:szczegoly_wydarzenium][:zolte_kartki].to_f
+      pilkarz2.ile_czerwonych += params[:szczegoly_wydarzenium][:czerwone_kartki].to_f
+      pilkarz.ileGoli += params[:szczegoly_wydarzenium][:ile_goli].to_f
+      pilkarz2.save!   
+
+    /* analogicznie trzeba zrobić edycje goli w meczu
+     if @szczegoly_wydarzenium.mecz_id != params[:szczegoly_wydarzenium][:mecz_id]
+     end
+    */
+    
     respond_to do |format|
       if @szczegoly_wydarzenium.update(szczegoly_wydarzenium_params)
         format.html { redirect_to @szczegoly_wydarzenium, notice: 'Szczegoly wydarzenium was successfully updated.' }
